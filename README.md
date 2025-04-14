@@ -1,3 +1,34 @@
+# SimpleTimeService - DevOps Challenge
+
+Welcome to the **SimpleTimeService** repository! This repository is part of the **Particle41 DevOps Challenge**. The goal is to evaluate your skills with modern development and operations tools.
+
+## Overview
+
+This challenge is designed to assess your abilities in:
+
+- Software development (by creating a minimalist web service).
+- Docker and containerization (by packaging the application in a Docker container).
+- Public Cloud services and Infrastructure as Code (IaC) using Terraform.
+- Deploying infrastructure in the cloud (AWS, GCP, Azure).
+- Writing clear and thorough documentation for your work.
+
+This challenge is divided into two parts:
+
+1. **Task 1**: Create and Dockerize a microservice (`SimpleTimeService`).
+2. **Task 2**: Deploy the containerized application using Terraform in a cloud environment.
+
+## Task 1: Minimalist Application Development / Docker / Kubernetes
+
+### SimpleTimeService Microservice
+
+The `SimpleTimeService` microservice is a simple web service that responds with the current timestamp and the IP address of the visitor in JSON format.
+
+#### Example Response:
+```json
+{
+  "timestamp": "2025-04-14T15:30:00Z",
+  "ip": "127.0.0.1"
+}
 Features:
 GET /: Returns the current date, time, and visitor’s IP address.
 
@@ -133,9 +164,11 @@ Once the infrastructure is deployed, the application will be available via a pub
 
 Thank you for completing this DevOps challenge! Feel free to reach out if you have any questions.
 
-markdown
+yaml
 Copy
 Edit
+
+---
 
 ### Instructions to Add:
 
@@ -145,34 +178,4 @@ Edit
 4. Paste the content into the `README.md` file.
 5. Commit and push the changes.
 
-This will allow anyone visiting your repository to understand the full process, including the setup, Dockerizatio# SimpleTimeService - DevOps Challenge
-
-Welcome to the **SimpleTimeService** repository! This is a minimal microservice that returns the current timestamp and the visitor's IP address as a JSON response. The goal of this project is to assess your skills with modern DevOps tools and cloud infrastructure.
-
-## Overview
-
-This project involves two main tasks:
-
-1. **Task 1**: Create a minimalist application (SimpleTimeService) and containerize it using Docker.
-2. **Task 2**: Deploy this containerized application using Terraform in a cloud environment.
-
-The instructions for both tasks are outlined below.
-
-## Task 1: Minimalist Application Development / Docker / Kubernetes
-
-### SimpleTimeService Microservice
-
-The SimpleTimeService is a simple web application that:
-
-- Returns the current **timestamp** and the **IP address** of the user.
-- This application is written in Python and uses Flask for handling HTTP requests.
-
-### Application Features
-
-- **Endpoint**: `/`
-- **Response (JSON)**:
-  ```json
-  {
-    "timestamp": "<current date and time>",
-    "ip": "<visitor's IP address>"
-  }
+This will provide clear and complete instructions on how to build, deploy, and run the **SimpleTimeServ
