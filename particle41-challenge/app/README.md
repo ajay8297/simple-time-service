@@ -6,9 +6,6 @@ This task requires you to build a minimalist microservice called **SimpleTimeSer
 
 { "timestamp": "", "ip": "" }
 
-vbnet
-Copy
-Edit
 
 ### Steps to complete Task 1
 
@@ -34,9 +31,6 @@ Use the following command to build the image:
 
 docker build -t simple-time-service .
 
-css
-Copy
-Edit
 
 **6. Run the container**
 
@@ -44,9 +38,7 @@ Run the container and map it to a local port:
 
 docker run -d -p 5000:5000 simple-time-service
 
-cpp
-Copy
-Edit
+
 
 **7. Test the service locally**
 
@@ -54,9 +46,6 @@ Visit `http://localhost:5000` in your browser or use curl:
 
 curl http://localhost:5000
 
-css
-Copy
-Edit
 
 You should receive a JSON response containing the current UTC timestamp and your IP address.
 
@@ -66,17 +55,9 @@ Tag and push your image to a public container registry:
 
 docker tag simple-time-service your-dockerhub-username/simple-time-service docker push your-dockerhub-username/simple-time-service
 
-css
-Copy
-Edit
+
 
 **9. Push code to a public git repository**
 
 Push the application code, Dockerfile, and README to a public Git repository (GitHub, GitLab, Bitbucket, etc.).
 
-### Recommended directory structure
-
-simple-time-service/ ├── app/ │ ├── app.py │ ├── requirements.txt │ └── Dockerfile └── README.md
-
-Copy
-Edit
