@@ -1,62 +1,82 @@
-Task 1 - Minimalist Application Development / Docker
+## Task 1 - Minimalist Application Development / Docker
 
-This task requires you to build a minimalist microservice called SimpleTimeService that returns the current UTC timestamp and the requester's IP address in JSON format. The service must be containerized using Docker and follow best practices such as running as a non-root user. The final image must be published to a public container registry, and the code pushed to a public repository.
+This task requires you to build a minimalist microservice called **SimpleTimeService** that returns the current UTC timestamp and the requester's IP address in JSON format. The service must be containerized using Docker and follow best practices such as running as a non-root user. The final image must be published to a public container registry, and the code pushed to a public repository.
 
-Expected JSON Response Format
+### Expected JSON response format
 
-{
-  "timestamp": "",
-  "ip": ""
-}
+{ "timestamp": "", "ip": "" }
 
-Steps to Complete Task 1
+vbnet
+Copy
+Edit
 
-1. Clone the Repository
+### Steps to complete Task 1
+
+**1. Clone the repository**
 
 Clone the project repository and navigate to the application directory.
 
-2. Add Application Code
+**2. Add application code**
 
-Create a simple microservice that starts a web server and returns the current timestamp and requester's IP in JSON format when the root URL (/) is accessed.
+Create a simple web service that returns the current UTC timestamp and requester's IP address in JSON format when the root URL (`/`) is accessed.
 
-3. Add Requirements File
+**3. Add requirements file**
 
-Create a file listing your project dependencies (such as Flask if using Python).
+Create a `requirements.txt` file listing your project dependencies.
 
-4. Add Dockerfile
+**4. Add Dockerfile**
 
-Write a Dockerfile to containerize your application. Follow best practices:
-- Use a minimal base image
-- Run as a non-root user
-- Expose the correct port
+Write a Dockerfile to containerize the application. Ensure the image is minimal, runs as a non-root user, and exposes the correct port.
 
-5. Build the Docker Image
+**5. Build the Docker image**
 
-Use Docker to build your container image with a single command.
+Use the following command to build the image:
 
-6. Run the Container
+docker build -t simple-time-service .
 
-Use Docker to run your container locally, mapping the container port to a local port (e.g., 5000).
+css
+Copy
+Edit
 
-7. Test the Service Locally
+**6. Run the container**
 
-Access the service using a browser or a tool like curl. It should return the expected JSON structure with the correct timestamp and IP address.
+Run the container and map it to a local port:
 
-8. Publish the Docker Image
+docker run -d -p 5000:5000 simple-time-service
 
-Tag and push your built Docker image to a public container registry such as Docker Hub.
+cpp
+Copy
+Edit
 
-9. Push Code to Public Git Repository
+**7. Test the service locally**
 
-Push your application code, Dockerfile, and documentation to a public Git repository (e.g., GitHub, GitLab, or Bitbucket).
+Visit `http://localhost:5000` in your browser or use curl:
 
-Recommended Directory Structure
+curl http://localhost:5000
 
-simple-time-service/
-├── app/
-│   ├── app.py
-│   ├── requirements.txt
-│   └── Dockerfile
-└── README.md
+css
+Copy
+Edit
 
- 
+You should receive a JSON response containing the current UTC timestamp and your IP address.
+
+**8. Publish the Docker image**
+
+Tag and push your image to a public container registry:
+
+docker tag simple-time-service your-dockerhub-username/simple-time-service docker push your-dockerhub-username/simple-time-service
+
+css
+Copy
+Edit
+
+**9. Push code to a public git repository**
+
+Push the application code, Dockerfile, and README to a public Git repository (GitHub, GitLab, Bitbucket, etc.).
+
+### Recommended directory structure
+
+simple-time-service/ ├── app/ │ ├── app.py │ ├── requirements.txt │ └── Dockerfile └── README.md
+
+Copy
+Edit
