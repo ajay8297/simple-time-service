@@ -5,49 +5,52 @@ This task requires you to build a minimalist microservice called SimpleTimeServi
 Expected JSON Response Format
 
 {
-  "timestamp": "<current date and time>",
-  "ip": "<the IP address of the visitor>"
+  "timestamp": "",
+  "ip": ""
 }
 
 Steps to Complete Task 1
 
-1. Clone the repository
+1. Clone the Repository
 
-git clone https://github.com/your-username/simple-time-service.git
-cd simple-time-service/app
+Clone the project repository and navigate to the application directory.
 
-2. Add application code (app.py)
+2. Add Application Code
 
-3. Add requirements.txt
+Create a simple microservice that starts a web server and returns the current timestamp and requester's IP in JSON format when the root URL (/) is accessed.
 
-flask
+3. Add Requirements File
+
+Create a file listing your project dependencies (such as Flask if using Python).
 
 4. Add Dockerfile
 
-5. Build the Docker image
+Write a Dockerfile to containerize your application. Follow best practices:
+- Use a minimal base image
+- Run as a non-root user
+- Expose the correct port
 
-docker build -t simple-time-service .
+5. Build the Docker Image
 
-6. Run the container
+Use Docker to build your container image with a single command.
 
-docker run -d -p 5000:5000 simple-time-service
+6. Run the Container
 
-7. Test the service locally
+Use Docker to run your container locally, mapping the container port to a local port (e.g., 5000).
 
-Open http://localhost:5000 in your browser or use curl:
+7. Test the Service Locally
 
-curl http://localhost:5000
+Access the service using a browser or a tool like curl. It should return the expected JSON structure with the correct timestamp and IP address.
 
-You should receive a JSON response with the current UTC timestamp and your IP address.
+8. Publish the Docker Image
 
-8. Publish the Docker image
+Tag and push your built Docker image to a public container registry such as Docker Hub.
 
-docker tag simple-time-service your-dockerhub-username/simple-time-service
-docker push your-dockerhub-username/simple-time-service
+9. Push Code to Public Git Repository
 
-9. Push your code to a public Git repository
+Push your application code, Dockerfile, and documentation to a public Git repository (e.g., GitHub, GitLab, or Bitbucket).
 
-Your directory structure should look like this:
+Recommended Directory Structure
 
 simple-time-service/
 ├── app/
@@ -55,3 +58,5 @@ simple-time-service/
 │   ├── requirements.txt
 │   └── Dockerfile
 └── README.md
+
+ 
