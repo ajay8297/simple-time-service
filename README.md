@@ -24,7 +24,6 @@ This challenge is divided into two parts:
 The `SimpleTimeService` microservice is a simple web service that responds with the current timestamp and the IP address of the visitor in JSON format.
 
 #### Example Response:
-```json
 {
   "timestamp": "2025-04-14T15:30:00Z",
   "ip": "127.0.0.1"
@@ -40,28 +39,19 @@ Non-root User: The container runs as a non-root user for security.
 Steps to Build and Run Locally
 Clone the repository:
 
-bash
-Copy
-Edit
+
 git clone https://github.com/your-username/simple-time-service.git
 cd simple-time-service
 Build the Docker image: In the root directory of the repository, run:
 
-bash
-Copy
-Edit
+
 docker build -t simple-time-service .
 Run the Docker container: After building the image, run the container:
 
-bash
-Copy
-Edit
+
 docker run -d -p 5000:5000 simple-time-service
 Access the service: Once the container is running, visit http://localhost:5000 to see the JSON response, which should look like this:
 
-json
-Copy
-Edit
 {
   "timestamp": "2025-04-14T15:30:00Z",
   "ip": "127.0.0.1"
@@ -76,15 +66,11 @@ The Dockerfile ensures the application is containerized and follows container be
 
 The container is built with the command:
 
-bash
-Copy
-Edit
+
 docker build -t simple-time-service .
 The container can be run using:
 
-bash
-Copy
-Edit
+
 docker run -d -p 5000:5000 simple-time-service
 Task 2: Infrastructure Deployment using Terraform
 Cloud Infrastructure
@@ -104,27 +90,15 @@ Install Terraform: Download and install Terraform from Terraform's official webs
 
 Configure AWS CLI: Make sure you have the AWS CLI installed and configured:
 
-bash
-Copy
-Edit
 aws configure
 Initialize Terraform: Inside the terraform directory, initialize Terraform:
 
-bash
-Copy
-Edit
 terraform init
 Plan the Infrastructure: Run the following command to see the changes Terraform will apply:
 
-bash
-Copy
-Edit
 terraform plan
 Apply the Plan: Apply the plan to create the infrastructure:
 
-bash
-Copy
-Edit
 terraform apply
 Access the Application: Once the infrastructure is deployed, the application will be accessible via the load balancer's public IP address.
 
@@ -135,10 +109,6 @@ The Terraform files include the necessary configuration for deploying the applic
 
 Repository Structure
 The repository is organized as follows:
-
-bash
-Copy
-Edit
 .
 ├── app
 │   ├── app.py          # SimpleTimeService application code
@@ -161,21 +131,3 @@ Develop a simple microservice and containerize it using Docker.
 Deploy the application in the cloud using Terraform and AWS.
 
 Once the infrastructure is deployed, the application will be available via a public load balancer in the cloud.
-
-Thank you for completing this DevOps challenge! Feel free to reach out if you have any questions.
-
-yaml
-Copy
-Edit
-
----
-
-### Instructions to Add:
-
-1. Copy the content above.
-2. Go to your GitHub repository.
-3. Open the `README.md` file or create one if it doesn't exist.
-4. Paste the content into the `README.md` file.
-5. Commit and push the changes.
-
-This will provide clear and complete instructions on how to build, deploy, and run the **SimpleTimeServ
