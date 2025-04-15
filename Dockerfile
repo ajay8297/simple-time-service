@@ -1,19 +1,113 @@
-FROM python:3.10-slim
+🚀 SimpleTimeService – DevOps Challenge
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+Welcome to the SimpleTimeService repository! This project is part of the Particle41 DevOps Challenge. You’ll build and deploy a simple web service using Docker, Terraform, and AWS.
 
-RUN useradd -m -s /bin/bash appuser
+📌 Challenge Overview
 
-WORKDIR /home/appuser/app
+This challenge tests your skills in:
 
-COPY --chown=appuser:appuser requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+- Building a minimalist web service
+- Dockerizing the application
+- Deploying using Terraform on AWS
+- Following DevOps best practices
+- Writing clear documentation
 
-COPY --chown=appuser:appuser app.py .
+🧩 Challenge Breakdown
 
-USER appuser
+Task 1: Create & Dockerize the Microservice
 
-EXPOSE 5000
+You’ll create a simple web service that returns the current timestamp and IP address of the requester.
 
-CMD ["python", "app.py"]
+Features:
+
+- GET / – Returns current timestamp and client IP in JSON
+
+Example response:
+
+{
+  "timestamp": "2025-04-14T15:30:00Z",
+  "ip": "127.0.0.1"
+}
+
+📦 Step 1: Clone the Repository
+
+git clone https://github.com/your-username/simple-time-service.git
+cd simple-time-service
+
+🐳 Step 2: Build the Docker Image
+
+docker build -t simple-time-service ./app
+
+▶️ Step 3: Run the Docker Container
+
+docker run -d -p 5000:5000 simple-time-service
+
+Visit the service in your browser:
+
+http://localhost:5000
+
+✅ Docker Best Practices
+
+- Minimal image size
+- Runs as non-root user for security
+
+☁️ Task 2: Deploy with Terraform on AWS
+
+You’ll deploy the containerized app using Terraform on AWS.
+
+Resources Created:
+
+- VPC (2 public and 2 private subnets)
+- ECS Cluster (to run the app)
+- Load Balancer (to access it)
+- Security Groups (for network access)
+
+📥 Step 1: Install Requirements
+
+- Terraform: https://www.terraform.io/downloads
+- AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+
+Configure your AWS CLI:
+
+aws configure
+
+🛠️ Step 2: Deploy with Terraform
+
+cd terraform
+
+terraform init
+terraform plan
+terraform apply
+
+Confirm with "yes" when prompted.
+
+🌐 Access the Application
+
+After deployment, Terraform will output the Load Balancer URL. Open that URL in your browser to access the live service.
+
+📁 Repository Structure
+
+simple-time-service/
+├── app/
+│   ├── app.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── terraform/
+│   ├── main.tf
+│   ├── outputs.tf
+│   ├── terraform.tfvars
+│   ├── variables.tf
+│   └── terraform.lock.hcl
+└── README.md
+
+🔒 Security Notes
+
+- Do not commit AWS credentials
+- Use IAM roles or environment variables to manage secrets securely
+
+✅ What You’ll Demonstrate
+
+- Build and containerize a microservice
+- Use Docker and Terraform efficiently
+- Deploy to AWS using infrastructure-as-code best practices
+
