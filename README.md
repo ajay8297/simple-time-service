@@ -25,8 +25,8 @@ Features:
 Example response:
 
 {
-  "timestamp": "2025-04-14T15:30:00Z",
-  "ip": "127.0.0.1"
+  "ip": "127.0.0.1",
+  "timestamp": "2025-04-14T15:30:00Z"
 }
 
 📦 Step 1: Clone the Repository
@@ -107,9 +107,3 @@ simple-time-service/
 - Build and containerize a microservice
 - Use Docker and Terraform efficiently
 - Deploy to AWS using infrastructure-as-code best practices
-
-🙌 Final Tip
-
-Once deployed, your microservice will be live and publicly accessible via the Load Balancer URL provided by Terraform.
-
-Good luck!
